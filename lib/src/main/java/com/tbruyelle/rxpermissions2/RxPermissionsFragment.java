@@ -68,12 +68,12 @@ public class RxPermissionsFragment extends Fragment {
 
     @TargetApi(Build.VERSION_CODES.M)
     boolean isGranted(String permission) {
-        return getActivity().checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
+        return getContext().checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
     }
 
     @TargetApi(Build.VERSION_CODES.M)
     boolean isRevoked(String permission) {
-        return getActivity().getPackageManager().isPermissionRevokedByPolicy(permission, getActivity().getPackageName());
+        return getContext().getPackageManager().isPermissionRevokedByPolicy(permission, getContext().getPackageName());
     }
 
     public void setLogging(boolean logging) {
